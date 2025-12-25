@@ -47,13 +47,17 @@ class RoverController extends Controller
             'y' => (int) $rover->y,
             'direction' => (string) $rover->direction,
         ];
+        // Obtenim els obstacles del usuari, per despres enviar-ho a la logica del rover
+        $obstacles = $request->user()->obstacles()->get(['x','y'])->toArray();
+
 
         // Executem RoverEngine el qual es la funcio amb tota la logica
         $result = $engine->run(
             x: $start['x'],
             y: $start['y'],
             direction: $start['direction'],
-            commands: $commands
+            commands: $commands,
+            obstacles: $obstacles
         );
 
         // Mostrem el estat final
