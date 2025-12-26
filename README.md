@@ -22,15 +22,19 @@ The frontend is divided into three main pages:
 ### Login:
 When users access the website for the first time, they are automatically redirected to the login page. This page has a visual design inspired by Mars rover missions. On the left side, some example or previous fake missions are displayed, while on the right side there is a form that allows users to log in to the system.
 
-![Login screen](docs/login.png)
+![Login screen](docs/Login.png)
 
 ### Register:
 This page is very similar to the login page, but it is used to create a new user account. When a user completes the registration process successfully, they are redirected to the dashboard page.
+
+![Login screen](docs/Register.png)
 
 ### Dashboard: 
 This page can only be accessed by authenticated users. Access is controlled using the authentication token assigned to each user. If the token is valid, the user can enter the dashboard; otherwise, access is denied.
 
 On this page, several important elements are displayed. On the left side, the current position of the rover can be seen. There is also a form to send movement commands to the rover, as well as another form used to create and manage obstacles. These tools allow the user to control and configure their own rover environment.
+
+![Login screen](docs/Dashboard.png)
 
 ### Final Structure:
 - `/login`
