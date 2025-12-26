@@ -22,6 +22,7 @@ The frontend is divided into three main pages:
 ### Login:
 When users access the website for the first time, they are automatically redirected to the login page. This page has a visual design inspired by Mars rover missions. On the left side, some example or previous fake missions are displayed, while on the right side there is a form that allows users to log in to the system.
 
+![Login screen](docs/login.png)
 
 ### Register:
 This page is very similar to the login page, but it is used to create a new user account. When a user completes the registration process successfully, they are redirected to the dashboard page.
@@ -99,13 +100,14 @@ To continue the mission after this situation, the user must change the rover’s
 
 ### BACKEND INSTALL AND RUN:
 
+- Install **Laravel Herd** or open this one(required to serve '.test' domains).
 - cd backend
 - composer install
 - cp .env.example .env
 - php artisan key:generate
 - php artisan migrate
-- php artisan serve
-
+- Try this link, in theory it should just show you that Laravel is running. If not, you have some kind of error: http://mars-rover-mission.test
+  
 ### FRONTEND INSTALL AND RUN:
 
 - cd ..
