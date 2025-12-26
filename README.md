@@ -36,3 +36,26 @@ On this page, several important elements are displayed. On the left side, the cu
 - `/`
   - Dashboard (protected route)
   - Shows rover state, obstacle management and the Mars map
+
+
+
+## Project Structure
+
+| Layer     | Path                | Description |
+|----------|---------------------|-------------|
+| Backend  | backend/app         | Laravel application logic |
+| Backend  | backend/routes      | API routes |
+| Backend  | backend/database    | Migrations and seeders |
+| Frontend| frontend/src/api    | Axios client and API helpers |
+| Frontend| frontend/src/views  | Login, Register, Dashboard |
+| Frontend| frontend/src/stores | Pinia stores |
+| Frontend| frontend/src/components | Reusable components |
+
+## ROVER LOGIC
+The rover logic works as follows. When a user account is created, a rover is automatically placed in the center of the map at position (X: 100, Y: 100). From that point, the user can send movement commands to control the rover.
+
+The available commands are F (Forward), L (Left), and R (Right). These commands can be combined into a single sequence, allowing multiple movements at once. For example, a valid command sequence could be: FFFFFRRFLF.
+
+Additionally, the user can create obstacles anywhere on the map. During the execution of a command sequence, if the rover detects that the next movement would place it on a position occupied by an obstacle, the rover changes its status to “aborted”, stops all remaining movements, and notifies the user that the mission has been aborted.
+
+To continue the mission after this situation, the user must change the rover’s direction and send new movement commands to move in another direction.
