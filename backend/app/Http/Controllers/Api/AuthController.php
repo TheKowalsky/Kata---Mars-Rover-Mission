@@ -25,9 +25,10 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),    // Es genera un hash(metodologia d'encriptacio) per emmagatzemar la password
         ]);
+        logger('REGISTER: estic entrant aqui');
         $user->rover()->create([                            // Creació del rover en el moment de crear el usuari nou
-            'x' => 0,
-            'y' => 0,
+            'x' => 100,
+            'y' => 100,
             'direction' => 'N',
         ]);
 

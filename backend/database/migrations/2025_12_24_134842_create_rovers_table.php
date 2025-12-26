@@ -19,8 +19,8 @@ return new class extends Migration
             // Clau secundaria per linkar-ho en la taula dels usuaris
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             // Posicio per defecte del Rover
-            $table->integer('x')->default(0);
-            $table->integer('y')->default(0);
+            $table->integer('x')->default(100);
+            $table->integer('y')->default(100);
             // Direccio a la que mira el Rover, per defecte es al Nord(N)
             $table->char('direction', 1)->default('N'); // N,E,S,W
 
