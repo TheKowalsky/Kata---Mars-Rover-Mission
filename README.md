@@ -9,11 +9,19 @@ The backend database contains two important related tables. The first one is the
 
 In addition, there is another related table called obstacles. This table allows users to create and manage the obstacles used in their rover environment. Each user can only access the obstacles they have created, ensuring data separation between different users. In summary, every user can configure their own rover and environment according to their specific needs.
 
+### Tech Stack
+- PHP 8.2+
+- Laravel 12
+- Laravel Sanctum
+- MySQL
+
+
 ## FRONTEND
 The frontend is divided into three main pages:
 
 ### Login:
 When users access the website for the first time, they are automatically redirected to the login page. This page has a visual design inspired by Mars rover missions. On the left side, some example or previous fake missions are displayed, while on the right side there is a form that allows users to log in to the system.
+
 
 ### Register:
 This page is very similar to the login page, but it is used to create a new user account. When a user completes the registration process successfully, they are redirected to the dashboard page.
@@ -37,6 +45,12 @@ On this page, several important elements are displayed. On the left side, the cu
   - Dashboard (protected route)
   - Shows rover state, obstacle management and the Mars map
 
+### Tech Stack
+- Vue 3 (Composition API)
+- Pinia (state management)
+- Vue Router
+- Vite
+- HTML Canvas (map rendering)
 
 
 ## Project Structure
@@ -59,3 +73,51 @@ The available commands are F (Forward), L (Left), and R (Right). These commands 
 Additionally, the user can create obstacles anywhere on the map. During the execution of a command sequence, if the rover detects that the next movement would place it on a position occupied by an obstacle, the rover changes its status to “aborted”, stops all remaining movements, and notifies the user that the mission has been aborted.
 
 To continue the mission after this situation, the user must change the rover’s direction and send new movement commands to move in another direction.
+
+## API Endpoints
+
+### Auth
+- POST /api/register
+- POST /api/login
+- GET /api/me
+- POST /api/logout
+
+### Rover
+- GET /api/rover
+- POST /api/rover/commands
+
+### Obstacles
+- GET /api/obstacles
+- POST /api/obstacles
+- DELETE /api/obstacles/{id}
+
+## RUN PROJECTE STEP BY STEP
+### CLONE REPOSITORI:
+
+- git clone <REPOSITORY_URL>
+- cd <PROJECT_FOLDER>
+
+### BACKEND INSTALL AND RUN:
+
+- cd backend
+- composer install
+- cp .env.example .env
+- php artisan key:generate
+- php artisan migrate
+- php artisan serve
+
+### FRONTEND INSTALL AND RUN:
+
+- cd ..
+- cd frontend
+- npm install
+- npm run dev
+
+### ACCES APP
+- http://localhost:5173
+
+## Notes
+
+- Code comments are written in Catalan, while this documentation is provided in English.
+
+
