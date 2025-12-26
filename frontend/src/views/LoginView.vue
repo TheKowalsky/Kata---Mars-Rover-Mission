@@ -58,9 +58,6 @@
               <h1 style="margin:0; font-size: 22px; color:#101828;">
                 Mars Rover Mission
               </h1>
-              <p style="margin:4px 0 0; font-size: 13px; color:#667085;">
-                Control panel · API-first · Obstacles detection
-              </p>
             </div>
           </div>
 
@@ -114,10 +111,6 @@
             </div>
           </div>
         </div>
-
-        <p style="margin: 0; color:#98a2b3; font-size: 12px;">
-          Simple UI · Strong engine · Clean architecture
-        </p>
       </div>
 
       <!-- COLUMNA DE LA DRETA -->

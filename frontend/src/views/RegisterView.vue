@@ -1,3 +1,6 @@
+<!--El estil d'aquesta pagina es la mateixa que la pagina de loggin, ja comentat anteriorment, 
+hi ha dues columnes on a la part de l'esquerra es on hi ha informacio falsa per aparentar una interficie
+mes formal sobre una missio de mart i a la part de la dreta esta el formulari per crear el enregistrament-->
 <template>
   <div
     style="
@@ -18,7 +21,7 @@
         gap: 18px;
       "
     >
-      <!-- LEFT: Brand / Mars hint -->
+      <!-- Columna esquerra -->
       <div
         style="
           border: 1px solid #e6e8f0;
@@ -55,9 +58,6 @@
               <h1 style="margin:0; font-size: 22px; color:#101828;">
                 Mars Rover Mission
               </h1>
-              <p style="margin:4px 0 0; font-size: 13px; color:#667085;">
-                Control panel · API-first · Obstacles detection
-              </p>
             </div>
           </div>
 
@@ -111,13 +111,9 @@
             </div>
           </div>
         </div>
-
-        <p style="margin: 0; color:#98a2b3; font-size: 12px;">
-          One rover · One user · Isolated mission state
-        </p>
       </div>
 
-      <!-- RIGHT: Register card -->
+      <!-- Columna dreta -->
       <div
         style="
           border: 1px solid #e6e8f0;
@@ -131,7 +127,7 @@
           justify-content: center;
         "
       >
-        <!-- FORM WRAPPER -->
+        <!-- FORMULARI DE ENREGISTRAMENT -->
         <div style="width: 100%; max-width: 320px;">
           <h2 style="margin:0 0 6px; color:#101828; font-size: 20px;">
             Crear compte
@@ -221,7 +217,7 @@
                 "
               />
             </div>
-
+            <!--Boto per enviar el fomrulari-->
             <button
               type="submit"
               :disabled="auth.loading"
@@ -294,7 +290,10 @@ const name = ref("");
 const email = ref("");
 const password = ref("");
 const passwordConfirmation = ref("");
-
+/**
+ * En aquesta funció enviem el formulari al backend i ens retornara directament tant la informació del usuari
+ * com el seu token i després ens portara directament a la pagina Dashboard
+ */
 async function onSubmit() {
   const ok = await auth.register(
     name.value,
