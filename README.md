@@ -27,16 +27,16 @@ When users access the website for the first time, they are automatically redirec
 ### Register:
 This page is very similar to the login page, but it is used to create a new user account. When a user completes the registration process successfully, they are redirected to the dashboard page.
 
-![Login screen](docs/Register.png)
+![Register screen](docs/Register.png)
 
 ### Dashboard: 
 This page can only be accessed by authenticated users. Access is controlled using the authentication token assigned to each user. If the token is valid, the user can enter the dashboard; otherwise, access is denied.
 
 On this page, several important elements are displayed. On the left side, the current position of the rover can be seen. There is also a form to send movement commands to the rover, as well as another form used to create and manage obstacles. These tools allow the user to control and configure their own rover environment.
 
-![Login screen](docs/Dashboard.png)
+![Dashboard screen](docs/Dashboard.png)
 
-### Final Structure:
+### Final Frontend Routes:
 - `/login`
   - Login form (email + password)
   - On success → redirects to `/`
